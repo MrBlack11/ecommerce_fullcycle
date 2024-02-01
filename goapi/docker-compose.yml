@@ -8,9 +8,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: imersao17
-      MYSQL_USER: root
       MYSQL_PASSWORD: root
     ports:
       - 3306:3306
     volumes:
-      - .docker/mysql:/var/lib/mysql
+      - db:/var/lib/mysql:rw
+
+volumes:
+  db: 
